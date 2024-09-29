@@ -1,4 +1,4 @@
-import mongoose, { Schema, schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 
 
@@ -24,10 +24,11 @@ const postSchema = new Schema(
         type:mongoose.Types.ObjectId,
         ref:"User"
     },
-    like:[{
-        like:mongoose.Types.ObjectId,
-        ref:"User"
-    }]
+    // like:{
+    //   type:mongoose.Types.ObjectId,
+    //   ref:"User"
+    // }
+   
 
 
   },

@@ -11,11 +11,16 @@ app.use(cookieParser());
 
 //import routers
 import user from "./routes/user.routes.js"
+import likes from "./routes/index.routes.js";
+
+
 
 
 //router
 
-app.use("/api/v1/user",user)
+app.use("/api/v1/user",user);
+
+app.use("/",likes)
 
 
 export { app}

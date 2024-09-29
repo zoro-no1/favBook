@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-    //  required: true,
+     required: true,
       lowercase: true,
       unique: true,
       trim: true,
@@ -14,13 +14,13 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      //required: true,
+      required: true,
       lowercase: true,
       unipue: true,
     },
     password: {
-      type: String
-     // required: true,
+      type: String,
+      required: true,
     },
     refreshToken:{
       type:String
@@ -45,7 +45,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 userSchema.methods.isPasswordCorrect = async function (password) {
-  return await new brcypt.compare(password, this.password);
+  return await brcypt.compare(password, this.password);
 };
 
 userSchema.methods.generateAccessToken = function () {

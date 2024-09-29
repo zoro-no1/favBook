@@ -8,6 +8,6 @@ dotenv.config(
     }
 )
 connectionDb().then(app.listen(process.env.PORT||8000,()=>{
-    console.log(`app listen in ${process.env.PORT}`);
+    console.log(`app is listening on ${process.env.PORT}`);
     
 }))
