@@ -12,7 +12,7 @@ export const isLogin = asynchandler(async (req,res,next)=>{
          new apiError(500,"token not found")
      }
       
-     const user=await User.findOne(token._id)
+     const user=await User.findOne(token._id).select("-password -refreshToken")
      
      if (!user) {
          new apiError(401,"user not found");

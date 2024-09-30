@@ -21,7 +21,7 @@ const postSchema = new Schema(
         type:String,
     },
     owner:{
-        type:mongoose.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"User"
     },
     // like:{

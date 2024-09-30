@@ -2,13 +2,13 @@ import mongoose,{Schema} from "mongoose";
 
 const likeSchema = new Schema({
     likeBy:{
-        type:mongoose.Types.ObjectId,
-        ref:user
+        type:Schema.Types.ObjectId,
+        ref:"User"
     },
     likedPost:{
-        type:mongoose.Types.ObjectId,
-        ref:post
+        type:Schema.Types.ObjectId,
+        ref:"Post"
     }
 })
 
-export const like = mongoose.model("like",likeSchema)
+export const Like = mongoose.model("Like",likeSchema)
